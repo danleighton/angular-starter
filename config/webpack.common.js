@@ -39,7 +39,7 @@ module.exports = function (options) {
     polyfills: './src/polyfills.browser.ts',
     main:      './src/main.browser.ts',
     fa:        'font-awesome-sass-loader!./config/font-awesome.config.js',
-    twbs:      'bootstrap-loader'
+    // twbs:      'bootstrap-loader'
   };
 
   Object.assign(ngcWebpackConfig.plugin, {
@@ -192,17 +192,18 @@ module.exports = function (options) {
         "window.jQuery": "jquery",
         Tether: "tether",
         "window.Tether": "tether",
-        Tooltip: "exports-loader?Tooltip!bootstrap/js/dist/tooltip",
-        Alert: "exports-loader?Alert!bootstrap/js/dist/alert",
-        Button: "exports-loader?Button!bootstrap/js/dist/button",
-        Carousel: "exports-loader?Carousel!bootstrap/js/dist/carousel",
-        Collapse: "exports-loader?Collapse!bootstrap/js/dist/collapse",
-        Dropdown: "exports-loader?Dropdown!bootstrap/js/dist/dropdown",
-        Modal: "exports-loader?Modal!bootstrap/js/dist/modal",
-        Popover: "exports-loader?Popover!bootstrap/js/dist/popover",
-        Scrollspy: "exports-loader?Scrollspy!bootstrap/js/dist/scrollspy",
-        Tab: "exports-loader?Tab!bootstrap/js/dist/tab",
-        Util: "exports-loader?Util!bootstrap/js/dist/util"
+        // Popper: ['popper.js', 'default'],
+        // Tooltip: "exports-loader?Tooltip!bootstrap/js/dist/tooltip",
+        // Alert: "exports-loader?Alert!bootstrap/js/dist/alert",
+        // Button: "exports-loader?Button!bootstrap/js/dist/button",
+        // Carousel: "exports-loader?Carousel!bootstrap/js/dist/carousel",
+        // Collapse: "exports-loader?Collapse!bootstrap/js/dist/collapse",
+        // Dropdown: "exports-loader?Dropdown!bootstrap/js/dist/dropdown",
+        // Modal: "exports-loader?Modal!bootstrap/js/dist/modal",
+        // Popover: "exports-loader?Popover!bootstrap/js/dist/popover",
+        // Scrollspy: "exports-loader?Scrollspy!bootstrap/js/dist/scrollspy",
+        // Tab: "exports-loader?Tab!bootstrap/js/dist/tab",
+        // Util: "exports-loader?Util!bootstrap/js/dist/util"
       }),
 
       /**
@@ -315,14 +316,14 @@ module.exports = function (options) {
        *
        * See: https://gist.github.com/sokra/27b24881210b56bbaff7
        */
-      // new LoaderOptionsPlugin({}),
-      new LoaderOptionsPlugin({
-        options: {
-          postcss: [
-            autoprefixer(),
-          ]
-        }
-      }),
+      new LoaderOptionsPlugin({}),
+      // new LoaderOptionsPlugin({
+      //   options: {
+      //     postcss: [
+      //       autoprefixer(),
+      //     ]
+      //   }
+      // }),
 
       new ngcWebpack.NgcWebpackPlugin(ngcWebpackConfig.plugin),
 
